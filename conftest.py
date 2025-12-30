@@ -1,7 +1,7 @@
 import numpy as np
 import pytest
 
-from CoordsStereo import StereoProjection
+from CoordsENU import ENU
 import CoordsCartesian3d
 
 
@@ -42,7 +42,7 @@ def get_point_geo_positions():
 def get_point_geo_positions_around_the_center(system_center):
     center_geo_pos = system_center
     center_geometry = CoordsCartesian3d.PointGeometry(center_geo_pos)
-    stereo_class = StereoProjection(center_geometry)
+    enu_class = ENU(center_geometry)
 
     number_of_points = 100
     max_range = 1000000
@@ -70,8 +70,8 @@ def get_point_geo_positions_around_the_center(system_center):
         x = r * np.sin(a)
         y = r * np.cos(a)
 
-        point_stereo_pos = [x, y, 0]
-        point_geo_pos = stereo_class.stereo_to_geodetic(point_stereo_pos)
+        point_cartesian_pos = [x, y, 0]
+        point_geo_pos = enu_class.enu_to_geodetic(point_cartesian_pos)
         point_geo_pos[2] = height1 + step_h * k
         points_geo_pos.append(point_geo_pos)
 
