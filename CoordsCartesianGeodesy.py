@@ -81,7 +81,7 @@ class CartesianGeodesyCoordinates:
 
         # crossing the pole
         if abs(latitude) > np.pi / 2:
-            latitude = np.pi / 2 - latitude
+            latitude = np.pi - latitude
 
         # calculating longitude
         d_longitude = EarthEllipsoid.meters_to_parallel(latitude, parallel_length)
