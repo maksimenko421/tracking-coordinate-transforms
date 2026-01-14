@@ -50,7 +50,13 @@ The graph_on = True / False parameter enables/disables the round-trip error grap
 
 ## Mathematical background
 
-A detailed mathematical description will be added in a future update.
+
+# Mathematical Background
+
+The algorithms and models implemented in this repository are based on the methods described in our preprint:
+
+Irina Maksimenko, "An Orthogonal Local Coordinate System on the Earth’s Ellipsoid". Zenodo preprint, 2026.
+https://doi.org/10.5281/zenodo.18241898
 
 
 ## License
